@@ -1,73 +1,83 @@
-# React + TypeScript + Vite
+# 🎮 Genshin FandomSelect
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personality quiz that matches you with your Genshin Impact character soulmate! Answer 12 questions and discover which of 60+ characters from all 7 regions of Teyvat best matches your personality.
 
-Currently, two official plugins are available:
+![React](https://img.shields.io/badge/React-19.2.0-61DAFB?logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.1-06B6D4?logo=tailwindcss)
+![Vite](https://img.shields.io/badge/Vite-7.3-646CFF?logo=vite)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+- **60+ Characters** from all 7 regions (Mondstadt, Liyue, Inazuma, Sumeru, Fontaine, Natlan, Snezhnaya)
+- **12 Personality Questions** with weighted scoring system
+- **Dark Genshin-themed UI** with animated background particles
+- **Element-colored badges** for character results
+- **Randomized questions** for replayability
+- **Mobile-responsive** design
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🖼️ Preview
 
-## Expanding the ESLint configuration
+The quiz features a sleek dark theme (#0a0a12) with amber/gold accents, glassmorphism cards, and smooth animations.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Quick Start
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+```bash
+# Install dependencies
+npm install
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+# Start development server
+npm run dev
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Build for production
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🎯 How It Works
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. **Start** - Click "Begin Your Journey" on the welcome screen
+2. **Answer** - Respond to 12 personality-based questions
+3. **Match** - Get matched with a character based on weighted scoring
+4. **Replay** - Try again for a different result!
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 👥 Characters by Region
+
+| Region | Characters |
+|--------|------------|
+| **Mondstadt** | Amber, Barbara, Bennett, Diluc, Fischl, Jean, Kaeya, Lisa, Mona, Noelle, Sucrose, Venti, Razor, Eula, Albedo |
+| **Liyue** | Beidou, Chongyun, Ganyu, Hu Tao, Keqing, Ningguang, Xiangling, Xingqiu, Xinyan, Yelan, Zhongli, Shenhe |
+| **Inazuma** | Ayaka, Ayato, Kazuha, Raiden Shogun, Yoimiya, Yae Miko, Itto, Kokomi, Sayu, Gorou |
+| **Sumeru** | Nahida, Alhaitham, Cyno, Tighnari, Nilou, Collei |
+| **Fontaine** | Furina, Neuvillette, Wriothesley, Navia, Clorinde, Lyney, Lynette, Freminet, Charlotte, Chiori |
+| **Natlan** | Mavuika, Kinich, Mualani, Kachina, Xilonen, Citlali, Ororon |
+| **Snezhnaya** | Tartaglia, Arlecchino |
+
+## 🛠️ Tech Stack
+
+- **React 19** - UI framework
+- **TypeScript** - Type safety
+- **Tailwind CSS 4** - Styling
+- **Vite** - Build tool
+
+## 📁 Project Structure
+
 ```
+src/
+├── components/
+│   ├── Quiz.tsx           # Main quiz logic
+│   ├── StartScreen.tsx    # Welcome screen
+│   ├── QuestionScreen.tsx # Question display
+│   └── ResultScreen.tsx   # Character result
+├── data/
+│   ├── charactersData.ts  # 60+ character definitions
+│   └── questionsData.ts   # 12 weighted questions
+└── types.ts               # TypeScript interfaces
+```
+
+## 📄 License
+
+This is a fan-made project and is not affiliated with HoYoverse or miHoYo.
+
+---
+
+*Made with ❤️ for the Genshin Impact community*
