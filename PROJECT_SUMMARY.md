@@ -2,7 +2,7 @@
 
 ## ✨ Project Overview
 
-A complete FandomSelect-style personality quiz application for Genshin Impact characters. Users answer 10 personality-based questions and receive a character match based on weighted scoring.
+A complete FandomSelect-style personality quiz application for Genshin Impact characters. Users answer 12 personality-based questions and receive a character match based on weighted scoring. Features a dark Genshin-themed UI with 60+ characters from all 7 regions of Teyvat.
 
 ## 🏗️ Project Structure
 
@@ -17,16 +17,16 @@ src/
 │   ├── QuestionScreen.tsx     # Question display and answer selection
 │   └── ResultScreen.tsx       # Character result display
 └── data/
-    ├── charactersData.ts      # 10 Genshin Impact characters with metadata
-    └── questionsData.ts       # 10 personality questions with weighted options
+    ├── charactersData.ts      # 60+ Genshin Impact characters with metadata
+    └── questionsData.ts       # 12 personality questions with weighted options
 ```
 
 ## 🎯 Core Features
 
 ### 1. **Complete Quiz Flow**
-- **Start Screen**: Welcoming introduction with quiz info
-- **Question Screen**: 10 randomized questions with progress indicator
-- **Result Screen**: Matched character with personalized description
+- **Start Screen**: Dark themed welcome with animated background particles
+- **Question Screen**: 12 randomized questions with amber progress indicator
+- **Result Screen**: Matched character with element-colored badges and description
 
 ### 2. **Intelligent Scoring System**
 - Each option has weighted points (0-3) toward different characters
@@ -34,17 +34,28 @@ src/
 - Tie-breaking: Randomly selects among top-scoring characters
 - Shuffled question order on each play for variety
 
-### 3. **Character Matching** (10 Characters)
-- Hu Tao (Pyro, Liyue, Polearm)
-- Zhongli (Geo, Liyue, Polearm)
-- Ganyu (Cryo, Liyue, Bow)
-- Fischl (Electro, Mondstadt, Bow)
-- Venti (Anemo, Mondstadt, Bow)
-- Sucrose (Anemo, Mondstadt, Catalyst)
-- Diluc (Pyro, Mondstadt, Claymore)
-- Raiden Shogun (Electro, Inazuma, Polearm)
-- Kaedehara Kazuha (Anemo, Inazuma, Sword)
-- Yelan (Hydro, Liyue, Bow)
+### 3. **Character Matching** (60+ Characters from All Regions)
+
+**Mondstadt (15)**
+- Amber, Barbara, Bennett, Diluc, Fischl, Jean, Kaeya, Lisa, Mona, Noelle, Sucrose, Venti, Razor, Eula, Albedo
+
+**Liyue (12)**
+- Beidou, Chongyun, Ganyu, Hu Tao, Keqing, Ningguang, Xiangling, Xingqiu, Xinyan, Yelan, Zhongli, Shenhe
+
+**Inazuma (10)**
+- Kamisato Ayaka, Kamisato Ayato, Kaedehara Kazuha, Raiden Shogun, Yoimiya, Yae Miko, Arataki Itto, Sangonomiya Kokomi, Sayu, Gorou
+
+**Sumeru (6)**
+- Nahida, Alhaitham, Cyno, Tighnari, Nilou, Collei
+
+**Fontaine (10)**
+- Furina, Neuvillette, Wriothesley, Navia, Clorinde, Lyney, Lynette, Freminet, Charlotte, Chiori
+
+**Natlan (7)**
+- Mavuika, Kinich, Mualani, Kachina, Xilonen, Citlali, Ororon
+
+**Snezhnaya (2)**
+- Tartaglia, Arlecchino
 
 ### 4. **Question Categories**
 - Personality traits (passionate, calm, free-spirited)
@@ -56,24 +67,26 @@ src/
 ## 🎨 Design & UX
 
 ### Visual Design
-- **Color Scheme**: Purple, blue, and indigo gradients inspired by Teyvat
+- **Color Scheme**: Dark theme (#0a0a12) with amber/gold accents inspired by Genshin
 - **Typography**: System fonts with modern hierarchy
-- **Layout**: Centered card design with backdrop blur effect
-- **Responsiveness**: Mobile-first approach with breakpoints at 768px (md)
+- **Layout**: Centered glassmorphism cards with backdrop blur effect
+- **Animations**: Animated background particles with pulse effects
+- **Element Colors**: Dynamic badges colored by character element (Pyro red, Cryo blue, etc.)
 
 ### Interactive Elements
 - Smooth transitions (300ms) on all interactions
-- Progress bar showing quiz completion
-- Visual highlight on selected answers
-- Hover effects on buttons and options
-- Smooth scale animations on button press
+- Amber progress bar showing quiz completion
+- Visual highlight on selected answers with amber glow
+- Hover effects with scale transforms on buttons
+- Letter badges (A, B, C, D) for answer options
 
 ### Tailwind CSS Features
-- Gradient backgrounds (from-purple to indigo)
-- Rounded corners (rounded-2xl for cards)
-- Glassmorphism effect (backdrop-blur, bg-opacity)
+- Dark glassmorphism (bg-[#1a1a2e]/90, backdrop-blur-xl)
+- Gradient backgrounds with amber accents
+- Rounded corners (rounded-2xl, rounded-3xl for cards)
+- Border styling with white/10 opacity
+- Shadow effects (shadow-amber-500/25)
 - Responsive text sizing (text-sm to text-5xl)
-- Transition utilities for smooth animations
 
 ## 🔧 Technical Stack
 
@@ -130,19 +143,22 @@ npm run preview
 
 - [x] Functional React components (no class components)
 - [x] Strict TypeScript typing throughout
-- [x] Tailwind CSS styling with responsive design
+- [x] Tailwind CSS styling with dark Genshin theme
 - [x] useState for state management
 - [x] useMemo for question shuffling
 - [x] No external UI libraries
 - [x] Mobile-first responsive design
-- [x] 10 personality-based questions
-- [x] 10 Genshin Impact characters
-- [x] Weighted scoring system
-- [x] Tie-breaking logic
+- [x] 12 personality-based questions
+- [x] 60+ Genshin Impact characters from all 7 regions
+- [x] Weighted scoring system with balanced distribution
+- [x] Tie-breaking logic with random selection
 - [x] Randomized question order
 - [x] Smooth transitions and animations
-- [x] Progress indicator
+- [x] Animated background particles
+- [x] Element-colored character badges
+- [x] Progress indicator with amber theme
 - [x] Personalized character descriptions
+- [x] Character images from gi.yatta.moe CDN
 - [x] Play again functionality
 
 ## 🎪 Question Design
@@ -165,9 +181,9 @@ Questions avoid explicit power scaling and maintain a fun, casual, fandom-friend
 
 ## 🎯 User Flow
 
-1. **Start** → Reads intro, clicks "Begin Your Journey"
-2. **Question 1-10** → Answer personality questions, see progress
-3. **Result** → See matched character with image and description
+1. **Start** → Sees dark themed intro with animated particles, clicks "Begin Your Journey"
+2. **Question 1-12** → Answer personality questions, see amber progress bar
+3. **Result** → See matched character with element badge, image, and description
 4. **Play Again** → Restart quiz with new question order
 
 ---
